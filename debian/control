@@ -1,15 +1,35 @@
-Source: template-repository
-Section: unknown
+Source: node-socket.io-parser
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Uploaders: Paolo Greppi <paolo.greppi@libpf.com>
+Section: javascript
+Testsuite: autopkgtest-pkg-nodejs
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Build-Depends: debhelper-compat (= 13)
+ , dh-sequence-nodejs
+ , mocha <!nocheck>
+ , node-component-emitter (>= 1.3.0+~1.2.10~)
+ , node-debug
+ , node-expect.js <!nocheck>
+ , node-isarray <!nocheck>
+ , node-ms
+ , node-should <!nocheck>
+ , node-typescript
+Standards-Version: 4.6.2
+Vcs-Browser: https://salsa.debian.org/js-team/node-socket.io-parser
+Vcs-Git: https://salsa.debian.org/js-team/node-socket.io-parser.git
+Homepage: https://github.com/socketio/socket.io-parser
+Rules-Requires-Root: no
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: node-socket.io-parser
+Architecture: all
+Depends: ${misc:Depends}
+ , node-component-emitter (>= 1.3.0+~1.2.10~)
+ , node-debug
+ , node-isarray
+Provides: ${nodejs:Provides}
+Multi-Arch: foreign
+Description: socket.io protocol parser
+ Node.js module providing a socket.io encoder and decoder written in
+ JavaScript complying with version 3 of socket.io-protocol.
+ .
+ Node.js is an event-based server-side JavaScript engine.
